@@ -939,4 +939,567 @@ Responsive Design
 
     transition:.4s;
 
+}
+.special-item{
+    position:relative;
+}
+
+.special-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#d62828;
+    color:#fff;
+    padding:8px 14px;
+    border-radius:25px;
+    font-size:13px;
+    font-weight:600;
+    z-index:5;
+}
+/*=========================================
+PARADISE SPECIAL BREAD POPUP
+Part 1
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/*========== POPUP CONTAINER ==========*/
+
+.bread-popup{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+
+    z-index:99999;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.4s ease;
+
+}
+
+.bread-popup.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/*========== CARD ==========*/
+
+.bread-card{
+
+    position:relative;
+
+    z-index:2;
+
+    width:320px;
+
+    padding:25px 20px 95px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,215,0,.18);
+
+    box-shadow:
+        0 0 10px rgba(255,215,0,.15),
+        0 0 25px rgba(255,193,7,.10),
+        0 18px 35px rgba(0,0,0,.35);
+
+    transition:.4s ease;
+
+}
+
+.bread-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/*========== CLOSE ICON ==========*/
+
+.close-icon{
+
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    font-size:20px;
+
+    color:rgba(255,255,255,.85);
+
+    cursor:pointer;
+
+    z-index:10;
+
+    transition:.3s ease;
+
+}
+
+.close-icon:hover{
+
+    color:#ff4d4d;
+
+    transform:rotate(90deg) scale(1.15);
+
+    text-shadow:0 0 10px rgba(255,77,77,.6);
+
+}
+
+/*========== SPOTLIGHT EFFECT ==========*/
+
+.bread-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:330px;
+    height:220px;
+
+    background:radial-gradient(circle,
+        rgba(255,255,255,.9) 0%,
+        rgba(255,235,170,.4) 35%,
+        rgba(255,215,0,0) 75%);
+
+    filter:blur(28px);
+
+    pointer-events:none;
+
+}
+
+/*========== TEXT ==========*/
+
+.bread-text{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-bottom:10px;
+
+}
+
+.tag{
+
+    display:inline-block;
+
+    padding:6px 16px;
+
+    border-radius:30px;
+
+    background:rgba(255,215,0,.12);
+
+    border:1px solid rgba(255,215,0,.25);
+
+    color:#ffd54f;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    margin-bottom:14px;
+
+}
+
+.bread-text h2{
+
+    color:#fff;
+
+    font-size:32px;
+
+    line-height:1.3;
+
+    margin-bottom:3px;
+
+}
+
+.bread-text h2 span{
+
+    color:#ffd54f;
+
+    text-shadow:0 0 10px rgba(255,215,0,.4);
+
+}
+
+.bread-text p{
+
+    color:#d5d5d5;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    max-width:250px;
+
+    margin:auto;
+
+}
+
+/*========== BREAD IMAGE ==========*/
+
+.bread-card img{
+
+    position:relative;
+
+    left:29px;   /* Increase to move further right */
+
+    width:100%;
+
+    margin:7px 0 15px;
+
+    animation:float 3.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 12px rgba(255,240,170,.9))
+        drop-shadow(0 0 28px rgba(255,215,0,.55))
+        drop-shadow(0 0 50px rgba(255,215,0,.25));
+
+    transition:.4s ease;
+
+}
+
+.bread-card:hover img{
+
+    transform:scale(1.07);
+
+}
+/*=========================================
+PARADISE SPECIAL BREAD POPUP
+Part 2
+=========================================*/
+
+/*========== ORDER BUTTON ==========*/
+
+.bread-card .order-btn{
+
+    position:absolute;
+
+    left:45%;
+    bottom:22px;
+
+    transform:translateX(-50%);
+
+    width:85%;
+
+    padding:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(to bottom,#ff6666,#c50000);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    border:2px solid rgba(255,220,220,.7);
+
+    box-shadow:
+        inset 0 3px 0 rgba(255,255,255,.45),
+        inset 0 -5px 0 rgba(110,0,0,.45),
+        0 7px 0 #780000,
+        0 14px 20px rgba(255,0,0,.35);
+
+    transition:.3s ease;
+
+}
+
+.bread-card .order-btn:hover{
+
+    transform:translateX(-50%) translateY(-3px);
+
+    box-shadow:
+        inset 0 3px 0 rgba(255,255,255,.55),
+        inset 0 -5px 0 rgba(110,0,0,.5),
+        0 10px 0 #780000,
+        0 18px 30px rgba(255,0,0,.45);
+
+}
+
+.bread-card .order-btn:active{
+
+    transform:translateX(-50%) translateY(5px);
+
+    box-shadow:
+        inset 0 2px 0 rgba(255,255,255,.3),
+        0 2px 0 #780000;
+
+}
+
+.bread-card .order-btn i{
+
+    font-size:18px;
+
+}
+
+/*========== POPUP ANIMATION ==========*/
+
+.bread-popup.show .bread-card{
+
+    animation:popupShow .45s ease forwards;
+
+}
+
+@keyframes popupShow{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(50px) scale(.8);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/*========== FLOATING BREAD ==========*/
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+}
+
+/*========== MOBILE ==========*/
+
+@media(max-width:480px){
+
+    .bread-card{
+
+        width:100%;
+
+        max-width:340px;
+
+        padding:22px 18px 92px;
+
+        border-radius:24px;
+
+    }
+
+    .bread-text h2{
+
+        font-size:27px;
+
+    }
+
+    .bread-text p{
+
+        font-size:13px;
+
+    }
+
+    .bread-card img{
+
+        max-width:240px;
+
+    }
+
+    .bread-card .order-btn{
+
+        width:60%;
+
+        font-size:16px;
+
+        padding:14px;
+
+    }
+
+}
+
+/*========== DESKTOP ==========*/
+
+@media(min-width:768px){
+
+    .bread-card{
+
+        width:380px;
+
+        padding:30px 25px 100px;
+
+    }
+
+    .bread-text h2{
+
+        font-size:36px;
+
+    }
+
+    .bread-card img{
+
+        max-width:300px;
+
+    }
+
+}
+
+/*========== OPTIONAL GLOW ==========*/
+
+.bread-popup.show .bread-card{
+
+    box-shadow:
+        0 0 18px rgba(255,215,0,.2),
+        0 0 40px rgba(255,193,7,.15),
+        0 25px 50px rgba(0,0,0,.45);
+
+}
+
+/*========== FLOATING BUTTONS ==========*/
+
+.floating-buttons{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    z-index:9999;
+
+}
+
+.floating-btn{
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.floating-btn:hover{
+
+    transform:translateY(-5px) scale(1.08);
+
+}
+
+/* Bread */
+
+.bread-btn{
+
+    background:#fff8e1;
+
+    border:1px solid #FFD700;
+
+}
+
+.bread-btn img{
+
+    width:66px;
+
+    height:66px;
+
+    object-fit:contain;
+
+}
+
+/* WhatsApp */
+
+.whatsapp-btn{
+
+    background:#25D366;
+
+    color:#fff;
+
+    font-size:32px;
+
+}
+
+/* Top */
+
+.top-btn{
+
+    background:#d62828;
+
+    color:#fff;
+
+    font-size:24px;
+
     }
