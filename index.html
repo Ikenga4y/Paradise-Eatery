@@ -465,6 +465,64 @@ our meals are prepared daily using quality ingredients and served with exception
     </div>
 
 </section>
+<!-- ================= SPECIAL BREAD POPUP ================= -->
+
+<div class="bread-popup" id="breadPopup">
+
+    <div class="bread-card">
+
+        <i class="fas fa-times close-icon" id="closeBread"></i>
+
+        <div class="bread-text">
+
+            <span class="tag">✨ PARADISE SPECIAL ✨</span>
+
+            <h2>Try Our <span>Special Paradise Bread</span></h2>
+
+        </div>
+
+        <img src="https://raw.githubusercontent.com/Ikenga4y/Pink-rose/b55c950491176e7a7dc5e732dac65f6ba58522dd/Adobe%20Express%20-%20file.png"
+        alt="Paradise Bread">
+
+        <a class="order-btn"
+        href="https://wa.me/2347047795000?text=Hello%20Paradise%20Eatery,%20I'd%20like%20to%20order%20Paradise%20Special%20Bread."
+        target="_blank">
+
+            <i class="fas fa-shopping-basket"></i>
+
+            Order Now
+
+        </a>
+
+    </div>
+
+</div>
+<!--========== FLOATING ACTION BUTTONS ==========-->
+
+<div class="floating-buttons">
+
+    <button class="floating-btn bread-btn" id="breadBtn">
+
+        <img src="https://raw.githubusercontent.com/Ikenga4y/Pink-rose/b55c950491176e7a7dc5e732dac65f6ba58522dd/Adobe%20Express%20-%20file.png"
+        alt="Paradise Bread">
+
+    </button>
+
+    <a href="https://wa.me/2347047795000?text=Hello%20Paradise%20Eatery,%20I'd%20like%20to%20place%20an%20order."
+    class="floating-btn whatsapp-btn"
+    target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+    <button class="floating-btn top-btn" id="topBtn">
+
+        <i class="fas fa-arrow-up"></i>
+
+    </button>
+
+</div>
 
 <!-- ================= FOOTER ================= -->
 
@@ -586,7 +644,47 @@ filterButtons.forEach(button=>{
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const breadPopup = document.querySelector(".bread-popup");
+    const closeIcon = document.querySelector(".close-icon");
+
+    setTimeout(() => {
+        breadPopup.classList.add("show");
+    }, 3000);
+
+    closeIcon.addEventListener("click", () => {
+        breadPopup.classList.remove("show");
+    });
+
+});
+
+/*========== FLOATING BUTTONS ==========*/
+
+const topBtn = document.getElementById("topBtn");
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+const breadBtn = document.getElementById("breadBtn");
+
+breadBtn.addEventListener("click",()=>{
+
+    document.getElementById("breadPopup").classList.add("show");
+
+});
+
 </script>
 
 </body>
-    </html>
+</html>
